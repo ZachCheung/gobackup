@@ -23,7 +23,8 @@ func Test_providerName(t *testing.T) {
 		"spaces": {"DigitalOcean Spaces", "nyc1.digitaloceanspaces.com", "nyc1"},
 	}
 
-	base := newBase(config.ModelConfig{}, "test")
+	storageConfig := config.SubConfig{}
+	base := newBase(config.ModelConfig{}, "test", storageConfig)
 	base.viper = viper.New()
 
 	for service, info := range cases {

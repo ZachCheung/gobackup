@@ -29,8 +29,8 @@ func TestModel(t *testing.T) {
 	assert.NotNil(t, model.EncryptWith.Viper)
 
 	// store_with
-	assert.Equal(t, model.StoreWith.Type, "local")
-	assert.Equal(t, model.StoreWith.Viper.GetString("path"), "/Users/jason/Downloads/backup1")
+	assert.Equal(t, model.Storages[0].Type, "local")
+	assert.Equal(t, model.Storages[0].Viper.GetString("path"), "/Users/jason/Downloads/backup1")
 
 	// databases
 	assert.Len(t, model.Databases, 3)
